@@ -43,3 +43,35 @@ exports.createProduct = async (req, res) => {
         })
     }
 };
+
+
+exports.updateProduct = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const productData = req.body;
+        const updatedProduct = await ProductService.updateProduct(id, productData);
+
+        res.status(200).json(updatedProduct);
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Internal error" });
+
+    }
+
+};
+
+exports.deleteProduct = async (req, res) => {
+    try {
+        const { id } = req.params;
+        await ProductService.deleteProduct(id);
+        res.status(204).json();
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Internal error" });
+
+
+    }
+
+};

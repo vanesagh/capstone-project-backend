@@ -10,6 +10,10 @@ exports.getProductById = async (id) => {
     return product;
 };
 
+exports.updateProduct = async (id, productData) => {
+    return await Product.findByIdAndUpdate(id, productData, { new: true }).lean().exec();
+};
+
 exports.createProduct = async (requestBody) => {
     const product = new Product({
         name: requestBody.name,
@@ -20,3 +24,7 @@ exports.createProduct = async (requestBody) => {
     return await product.save();
 
 }
+
+exports.deleteProduct = async (id) => {
+    await Product.findByIdAndDelete(id).exec();
+};
