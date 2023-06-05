@@ -8,7 +8,7 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.json());
 app.use("/products", ProductRoutes);
-const port = process.env.PORT || 3002;
+const port = process.env.PORT || 3003;
 
 const connectDB = async () => {
     try {
