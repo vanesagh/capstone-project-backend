@@ -7,13 +7,14 @@ require("dotenv").config();
 
 app.use(cors());
 app.use(express.json());
-app.use("/products", ProductRoutes);
-const port = process.env.PORT || 3003;
 
+const port = process.env.PORT || 3001;
+
+app.use("/products", ProductRoutes);
 const connectDB = async () => {
     try {
         await mongoose.connect(process.env.DATABASE_URL);
-        app.listen(process.env.PORT);
+
     } catch (error) {
         console.log("Failed to connect to Mongo", error);
 
