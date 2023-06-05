@@ -19,7 +19,15 @@ const connectDB = async () => {
     }
 };
 
-connectDB();
+const server = app.listen(port, () => {
+    console.log(`Server is running in ${process.env.PORT}`);
+    connectDB();
+
+});
+
+module.exports = { app, server };
+
+
 
 
 
