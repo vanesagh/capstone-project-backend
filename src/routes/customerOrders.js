@@ -3,6 +3,6 @@ const CustomerOrderController = require('../controllers/customerOrder');
 
 const router = express.Router();
 
-router.post("/checkout", CustomerOrderController.createCustomerOrder);
+router.post("/", CustomerOrderController.createCustomerOrder);
 
 module.exports = router;
