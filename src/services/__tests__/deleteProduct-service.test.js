@@ -13,7 +13,7 @@ describe("when calling the product service method", () => {
     let id;
 
     beforeEach(() => {
-        let id;
+
         id = chance.guid();
 
         Product.findByIdAndDelete = jest.fn().mockReturnThis();

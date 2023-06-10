@@ -13,6 +13,7 @@ describe("when calling the product service method", () => {
     let id, productData, updatedProduct;
 
     beforeEach(() => {
+        let id;
         id = chance.guid();
         productData = {
             name: chance.string(),
